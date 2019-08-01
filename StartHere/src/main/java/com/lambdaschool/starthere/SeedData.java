@@ -6,6 +6,8 @@ import com.lambdaschool.starthere.models.User;
 import com.lambdaschool.starthere.models.UserRoles;
 import com.lambdaschool.starthere.services.RoleService;
 import com.lambdaschool.starthere.services.UserService;
+import com.lambdaschool.starthere.models.Experience;
+import com.lambdaschool.starthere.services.ExperienceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -22,6 +24,9 @@ public class SeedData implements CommandLineRunner
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    ExperienceService experienceService;
 
 
     @Override
@@ -70,5 +75,13 @@ public class SeedData implements CommandLineRunner
         users.add(new UserRoles(new User(), r2));
         User u5 = new User("Jane", "password", users);
         userService.save(u5);
+
+        Experience a1 = new Experience("Playtime at the Park", "Come and play at the park and get to know everyone.", 5, 20, 5);
+        Experience a2 = new Experience("Scavenger Hunt", "Get to know your city", 10, 15, 10);
+        Experience a3 = new Experience("Baseball game", "Come to the baseball game", 25, 50, 30);
+
+        experienceService.save(a1);
+        experienceService.save(a2);
+        experienceService.save(a3);
     }
 }

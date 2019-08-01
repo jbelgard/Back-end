@@ -13,6 +13,8 @@ public interface ExperienceService {
 
     void delete(long id);
 
+    Experience updateExperience(Experience experience, long id);
+
     Experience save(Experience experience);
 
     Experience update(Experience experience, long id);
