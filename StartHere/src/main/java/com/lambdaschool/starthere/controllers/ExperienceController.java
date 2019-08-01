@@ -28,22 +28,23 @@ public class ExperienceController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "title", dataType = "string", paramType = "query",
                 value = "Experiences that you want to show."),
-            @ApiImplicitParam(name = "attendees", dataType = "integr", paramType = "query",
+            @ApiImplicitParam(name = "attendees", dataType = "integer", paramType = "query",
                 value = "Experiences by number of attendees"),
             @ApiImplicitParam(name = "sort", allowMultiple = true, dataType = "string", paramType = "query",
                 value = "Sorting criteria in the format: property(,asc|desc). " +
                         "Default sort order is ascending. " +
                         "Multiple sort criteria are supported.")})
 
-    @GetMapping(value = "/experience")
-    public ResponseEntity<?> findAllExperience(Pageable pageable){
+    @GetMapping(value = "/experiences",
+                produces = {"application/json"})
+    public ResponseEntity<?> findAllExperience(){
         return new ResponseEntity<>(experienceService.findAll(), HttpStatus.OK);
     }
 
     @ApiOperation(value = "Update a current Experience", response = Experience.class)
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successfully update experience", response = void.class),
-            @ApiResponse(code = 500, message = "Failed to update book", response = ErrorDetail.class)
+            @ApiResponse(code = 500, message = "Failed to update experience", response = ErrorDetail.class)
     })
 
     @PutMapping(value = "/data/experience/{id}")

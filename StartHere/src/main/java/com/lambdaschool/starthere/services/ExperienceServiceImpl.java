@@ -63,9 +63,14 @@ public class ExperienceServiceImpl implements ExperienceService {
         return exprepos.save(newExperience);
     }
 
-    @Transactional
     @Override
     public Experience update(Experience experience, long id) {
+        return null;
+    }
+
+    @Transactional
+    @Override
+    public Experience updateExperience(Experience experience, long id) {
         Experience currentExperience = exprepos.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(Long.toString(id)));
 

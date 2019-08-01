@@ -13,7 +13,6 @@ public class Experience extends Auditable {
     @Column(unique = true,
             nullable = false)
 
-    private long hostid;
     private String title;
     private String body;
     private int attendees;
@@ -42,13 +41,6 @@ public class Experience extends Auditable {
         this.experienceid = experienceid;
     }
 
-    public long getHostId() {
-        return hostid;
-    }
-
-    public void setHostId() {
-        this.hostid = hostid;
-    }
 
     public String getTitle() {
         return title;

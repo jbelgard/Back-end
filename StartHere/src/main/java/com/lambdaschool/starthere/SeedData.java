@@ -76,6 +76,7 @@ public class SeedData implements CommandLineRunner
         User u5 = new User("Jane", "password", users);
         userService.save(u5);
 
+
         Experience a1 = new Experience("Playtime at the Park", "Come and play at the park and get to know everyone.", 5, 20, 5);
         Experience a2 = new Experience("Scavenger Hunt", "Get to know your city", 10, 15, 10);
         Experience a3 = new Experience("Baseball game", "Come to the baseball game", 25, 50, 30);
