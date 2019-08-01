@@ -10,9 +10,11 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 // http://localhost:2019/swagger-ui.html
 @Configuration
+@EnableSwagger2
 public class Swagger2Config
 {
     @Bean
@@ -27,6 +29,10 @@ public class Swagger2Config
 
     private ApiInfo apiEndPointsInfo()
     {
-        return new ApiInfoBuilder().title("Java Spring Back End Starting Project").description("A starting application for developing Java Spring Back End Projects").contact(new Contact("John Mitchell", "http://www.lambdaschool.com", "john@lambdaschool.com")).license("MIT").licenseUrl("https://github.com/LambdaSchool/java-starthere/blob/master/LICENSE").version("1.0.0").build();
+        return new ApiInfoBuilder().title("Java Spring Back End Starting Project")
+                .description("A starting application for developing Java Spring Back End Projects")
+                .contact(new Contact("John Mitchell", "http://www.lambdaschool.com", "john@lambdaschool.com"))
+                .license("MIT").licenseUrl("https://github.com/LambdaSchool/java-starthere/blob/master/LICENSE")
+                .version("1.0.0").build();
     }
 }
